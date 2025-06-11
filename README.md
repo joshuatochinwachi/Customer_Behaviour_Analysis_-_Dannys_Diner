@@ -12,6 +12,24 @@ He plans on using these insights to help him decide whether he should expand the
 
 ## Entity Relationship Diagram
 
-![image](https://github.com/user-attachments/assets/f3e8b92c-2ed7-4db1-a913-d61b91e1819c)         ![image](https://github.com/user-attachments/assets/9827c513-4bae-4129-89d6-d66c6453c19e)
+![image](https://github.com/user-attachments/assets/f3e8b92c-2ed7-4db1-a913-d61b91e1819c)
 
-ugigui
+## Tables
+### Sales
+| customer_id | order_date | product_id | 
+|-------------|------------|------------|
+|      A      | 2021-01-01 |      1     |
+|      A      | 2021-01-01 |      2     |
+|      A      | 2021-01-07 |      2     |
+|      A      | 2021-01-10 |      3     |
+|      A      | 2021-01-11 |      3     |
+|      A      | 2021-01-10 |      3     |
+|      B      | 2021-01-01 |      2     |
+|      B      | 2021-01-02 |      2     |
+|      B      | 2021-01-04 |      1     |
+|      B      | 2021-01-11 |      1     |
+|      B      | 2021-01-16 |      3     |
+|      B      | 2021-02-01 |      3     |
+|      C      | 2021-01-01 |      3     |
+|      C      | 2021-01-01 |      3     |
+|      C      | 2021-01-07 |      3     |
