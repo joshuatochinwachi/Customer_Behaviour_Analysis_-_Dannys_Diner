@@ -16,7 +16,7 @@ He plans on using these insights to help him decide whether he should expand the
 
 ## Tables
 ### Sales
-| customer_id | order_date | product_id | 
+| customer_id | order_date | product_id |
 |-------------|------------|------------|
 |      A      | 2021-01-01 |      1     |
 |      A      | 2021-01-01 |      2     |
@@ -33,3 +33,16 @@ He plans on using these insights to help him decide whether he should expand the
 |      C      | 2021-01-01 |      3     |
 |      C      | 2021-01-01 |      3     |
 |      C      | 2021-01-07 |      3     |
+
+### Menu
+| product_id | product_name | price | 
+|------------|--------------|-------|
+|      1     |     sushi    |   10  |
+|      2     |     curry    |   15  |
+|      3     |     ramen    |   12  |
+
+### Members
+| customer_id |  join_date  |
+|-------------|-------------|
+|      A      |  2021-01-07 |
+|      B      |  2021-01-09 |
