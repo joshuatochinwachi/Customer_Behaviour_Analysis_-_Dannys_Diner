@@ -23,7 +23,7 @@ He plans on using these insights to help him decide whether he should expand the
 |      A      | 2021-01-07 |      2     |
 |      A      | 2021-01-10 |      3     |
 |      A      | 2021-01-11 |      3     |
-|      A      | 2021-01-10 |      3     |
+|      A      | 2021-01-11 |      3     |
 |      B      | 2021-01-01 |      2     |
 |      B      | 2021-01-02 |      2     |
 |      B      | 2021-01-04 |      1     |
