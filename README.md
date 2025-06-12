@@ -1,14 +1,97 @@
 # Customer_Behaviour_Analysis_-_Dannys_Diner
 
-This project and the data used was part of a case study which can be found [here](https://8weeksqlchallenge.com/case-study-1/). It focuses on examining patterns, trends, and factors influencing customer spending in order to gain insights into their preferences, purchasing habits, and potential areas for improvement in menu offerings or marketing strategies in a dining establishment.
+This project and the data used was part of a case study which can be found [here](https://8weeksqlchallenge.com/case-study-1/).
 
-## Background
-Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favourite foods: sushi, curry and ramen. Danny’s Diner is in need of assistance to help the restaurant stay afloat - the restaurant has captured some very basic data from their few months of operation but have no idea how to use their data to help them run the business.
+# **Danny's Diner: Customer Behavior Analysis Using SQL**  
 
-## Problem Statement
-Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favorite. Having this deeper connection with his customers will help him deliver a better and more personalized experience for his loyal customers.
+## **Project Overview**  
+This project analyzes customer transaction data from **Danny’s Diner** to uncover spending habits, visiting patterns, and menu preferences. Using **SQL**, I extracted insights to help Danny improve customer experience and optimize his loyalty program.  
 
-He plans on using these insights to help him decide whether he should expand the existing customer loyalty program - additionally he needs help to generate some basic datasets so his team can easily inspect the data without needing to use SQL.
+## **Project Objectives**  
+- Analyze **customer spending** and favorite menu items.  
+- Track **visiting patterns** (frequency, first/last orders).  
+- Evaluate **loyalty program performance** through reward points.  
+- Provide **actionable recommendations** for business growth.  
+
+## **Data Used**  
+Three key tables:  
+1. **`sales`** (customer orders: `customer_id`, `order_date`, `product_id`)  
+2. **`menu`** (menu items: `product_id`, `product_name`, `price`)  
+3. **`members`** (loyalty program sign-ups: `customer_id`, `join_date`)  
+
+## **Tools Used**  
+- **SQL** (CTEs, Window Functions, JOINs, Aggregations)  
+- **SQL Server** (Database management)  
+
+---
+
+# **Key SQL Analysis Questions**  
+
+### **1. What is the total amount each customer spent at the restaurant?**  
+Identify high-spending customers to focus loyalty rewards.  
+
+### **2. How many days has each customer visited the restaurant?**  
+Measure customer engagement frequency.  
+
+### **3. What was the first item purchased by each customer?**  
+Understand initial preferences to personalize offers.  
+
+### **4. What is the most purchased item on the menu, and how many times was it bought?**  
+Identify best-selling products for inventory planning.  
+
+### **5. Which item was the most popular for each customer?**  
+Discover individual preferences for targeted marketing.  
+
+### **6. Which item was purchased first by the customer after they became a member?**  
+Analyze post-membership behavior changes.  
+
+### **7. Which item was purchased just before the customer became a member?**  
+Identify potential triggers for joining the loyalty program.  
+
+### **8. What is the total items and amount spent for each member before they became a member?**  
+Compare pre-membership spending patterns.  
+
+### **9. If each $1 spent = 10 points, and sushi has a 2x multiplier, how many points does each customer have?**  
+Calculate potential loyalty rewards under current program.  
+
+### **10. In the first week after joining, members earn 2x points on all items—how many points do Customers A and B have by end of January?**  
+Test effectiveness of new-member bonus points.  
+
+### **11. Rank all products for each member, with NULL values for non-members**  
+Provide product rankings exclusively for loyalty program members while clearly identifying non-members with NULL values.  
+
+---
+
+# **Insights & Recommendations**  
+
+### **Key Findings**  
+✅ **Customer B** visited most frequently (6 times in Jan 2021).  
+✅ **Ramen** is the top-selling item, followed by curry and sushi.  
+✅ **Customer A** loves ramen, **Customer C** only orders ramen, while **Customer B** enjoys all three equally.  
+✅ Last pre-membership orders: **sushi (Customer A)** and **curry (Customer B)**—potential loyalty triggers.  
+
+### **Actionable Steps**  
+1. **Boost Loyalty Program:**  
+   - Offer **double points on sushi** and **first-week bonuses**.  
+   - Personalize rewards (e.g., free ramen for frequent buyers).  
+2. **Increase Engagement:**  
+   - Target **Customer B** with exclusive deals (highest visits).  
+   - Investigate why **Customer C** only orders ramen—expand menu appeal?  
+3. **Menu Optimization:**  
+   - Introduce **new ramen variants** (top seller).  
+   - Create **bundles** (e.g., sushi + curry) to diversify orders.  
+
+---
+
+# **Conclusion**  
+This SQL-driven analysis revealed **customer preferences, spending trends, and loyalty program opportunities** for Danny's Diner. The additional product ranking analysis (Question 11) provides clear differentiation between member and non-member purchasing patterns, enabling more focused loyalty program strategies.  
+
+**Next Steps:**  
+- Automate monthly SQL reports.  
+- Expand analysis with additional customer data.  
+- A/B test promotions based on insights.  
+
+Let me know if you'd like to explore any specific aspect in more detail!
 
 ## Entity Relationship Diagram
 
