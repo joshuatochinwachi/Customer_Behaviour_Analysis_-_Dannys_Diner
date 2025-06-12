@@ -1,11 +1,7 @@
-# Customer_Behaviour_Analysis_-_Dannys_Diner
-
-This project and the data used was part of a case study which can be found [here](https://8weeksqlchallenge.com/case-study-1/).
-
 # **Danny's Diner: Customer Behavior Analysis Using SQL**  
 
 ## **Project Overview**  
-This project analyzes customer transaction data from **Danny’s Diner** to uncover spending habits, visiting patterns, and menu preferences. Using **SQL**, I extracted insights to help Danny improve customer experience and optimize his loyalty program.  
+This project analyzes customer transaction data from **Danny’s Diner** to uncover spending habits, visiting patterns, and menu preferences. Using **SQL**, I extracted insights to help Danny improve customer experience and optimize his loyalty program. This project and the data used was part of a case study which can be found [here](https://8weeksqlchallenge.com/case-study-1/).
 
 ## **Project Objectives**  
 - Analyze **customer spending** and favorite menu items.  
@@ -19,16 +15,66 @@ Three key tables:
 2. **`menu`** (menu items: `product_id`, `product_name`, `price`)  
 3. **`members`** (loyalty program sign-ups: `customer_id`, `join_date`)  
 
+### Sales Table
+| customer_id | order_date | product_id |
+|-------------|------------|------------|
+|      A      | 2021-01-01 |      1     |
+|      A      | 2021-01-01 |      2     |
+|      A      | 2021-01-07 |      2     |
+|      A      | 2021-01-10 |      3     |
+|      A      | 2021-01-11 |      3     |
+|      A      | 2021-01-11 |      3     |
+|      B      | 2021-01-01 |      2     |
+|      B      | 2021-01-02 |      2     |
+|      B      | 2021-01-04 |      1     |
+|      B      | 2021-01-11 |      1     |
+|      B      | 2021-01-16 |      3     |
+|      B      | 2021-02-01 |      3     |
+|      C      | 2021-01-01 |      3     |
+|      C      | 2021-01-01 |      3     |
+|      C      | 2021-01-07 |      3     |
+
+### Menu Table
+| product_id | product_name | price | 
+|------------|--------------|-------|
+|      1     |     sushi    |   10  |
+|      2     |     curry    |   15  |
+|      3     |     ramen    |   12  |
+
+### Members Table
+| customer_id |  join_date  |
+|-------------|-------------|
+|      A      |  2021-01-07 |
+|      B      |  2021-01-09 |
+
+### Entity Relationship Diagram
+
+![image](https://github.com/user-attachments/assets/f3e8b92c-2ed7-4db1-a913-d61b91e1819c)
+
 ## **Tools Used**  
 - **SQL** (CTEs, Window Functions, JOINs, Aggregations)  
 - **SQL Server** (Database management)  
 
 ---
 
-# **Key SQL Analysis Questions**  
+## **Key SQL Analysis Questions**  
 
 ### **1. What is the total amount each customer spent at the restaurant?**  
 Identify high-spending customers to focus loyalty rewards.  
+
+#### Method:
+```
+select 
+	s.customer_id as customer,
+	sum(m.price) as total_amount_spent
+from sales s inner join menu m 
+	on s.product_id = m.product_id
+group by s.customer_id
+;
+```
+#### Result:
+![image](https://github.com/user-attachments/assets/a164ea4d-75b4-4561-a63f-9425b34d9dd1)
+
 
 ### **2. How many days has each customer visited the restaurant?**  
 Measure customer engagement frequency.  
@@ -93,39 +139,6 @@ This SQL-driven analysis revealed **customer preferences, spending trends, and l
 
 Let me know if you'd like to explore any specific aspect in more detail!
 
-## Entity Relationship Diagram
 
-![image](https://github.com/user-attachments/assets/f3e8b92c-2ed7-4db1-a913-d61b91e1819c)
 
-## Tables
-### Sales
-| customer_id | order_date | product_id |
-|-------------|------------|------------|
-|      A      | 2021-01-01 |      1     |
-|      A      | 2021-01-01 |      2     |
-|      A      | 2021-01-07 |      2     |
-|      A      | 2021-01-10 |      3     |
-|      A      | 2021-01-11 |      3     |
-|      A      | 2021-01-11 |      3     |
-|      B      | 2021-01-01 |      2     |
-|      B      | 2021-01-02 |      2     |
-|      B      | 2021-01-04 |      1     |
-|      B      | 2021-01-11 |      1     |
-|      B      | 2021-01-16 |      3     |
-|      B      | 2021-02-01 |      3     |
-|      C      | 2021-01-01 |      3     |
-|      C      | 2021-01-01 |      3     |
-|      C      | 2021-01-07 |      3     |
 
-### Menu
-| product_id | product_name | price | 
-|------------|--------------|-------|
-|      1     |     sushi    |   10  |
-|      2     |     curry    |   15  |
-|      3     |     ramen    |   12  |
-
-### Members
-| customer_id |  join_date  |
-|-------------|-------------|
-|      A      |  2021-01-07 |
-|      B      |  2021-01-09 |
